@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<section>
+    <nav>
+    <div class="logo">
+        <img src="{% static 'den.jpg'%}" alt="">
+    </div>
+          <ul>
+            <li><a href="home">HOME</a></li>
+            <li><a href="about">ABOUT</a></li>
+            <li><a href="service">SERVICE</a></li>
+            <li><a href="project">PROJECTS</a></li>
+            <li><a href="log">SIGN IN</a></li>
+
+           </ul>
+        </nav>
+
+</section>
+<div class="box1">
+        <div class="box2">
+            <div class="regi-text">
+            <h1>Register</h1>
+        </div>
+        <div class="sign-form">
+            <form method="POST" action='sign_valid'>
+                <label>username</label>
+                <input type="text" name="username">
+                <label>email</label>
+                <input type="email" name="email">
+
+                <label>password</label>
+                <input type="password1" name="password1">
+                <label>repeat your password</label>
+                <input type="password2" name="password2">
+{%csrf_token%}
+
+            <div class="btn">
+                <div>
+                <button><a href="log">login</a></button></div>
+              <div>
+                <input type="submit" value="register" class="click"></div>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

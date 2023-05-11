@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+<style>
+        .collet{
+        width:100%;
+        height:100vh;
+
+
+        }
+        .pro{
+        object-fit:cover;
+    object-position:top;
+    height:60vh;
+    overflow:hidden;
+
+
+        }
+        .collect h2{
+            color:orange;
+            font-weight: 400;
+            text-align :center;
+            padding-top:100px;
+
+
+        }
+        .collect h1{
+            color: rgb(4, 13, 91);
+            font-size:30px;
+            font-weight: 400;
+            text-align :center;
+            padding:30px;
+
+
+        }
+        .row{
+            padding-top:10px;
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+        .cover{
+
+            width: 340px;
+            height: 500px;
+            background-color: rgba(46, 172, 172, 0.53);
+
+
+        }
+        .cover img{
+            padding-top:10px;
+            width: 300px;
+            height:250px;
+            padding-left:30px;
+
+        }
+        .cover h5{
+             font-size:15px;
+             font-weight:bold;
+             padding-top:20px;
+              color: rgb(4, 13, 91);
+              text-align:center;
+        }
+        .name{
+         font-size:20px;
+        }
+
+        }
+        .swi{
+            margin-left:100px;
+
+        }
+        .cover:hover{
+          width: 320px;
+            height: 500px;
+            border: 2px solid black;
+           background-color:hsla(189, 89%, 48%, 0.801);
+        }
+</style>
+
+</head>
+<body>
+<section>
+    <nav>
+    <div class="logo">
+        <img src="{% static 'den.jpg'%}" alt="">
+    </div>
+          <ul>
+            <li><a href="home">HOME</a></li>
+            <li><a href="about">ABOUT</a></li>
+            <li><a href="service">SERVICE</a></li>
+            <li><a href="project">PROJECTS</a></li>
+            <li><a href="log">SIGN IN</a></li>
+
+           </ul>
+        </nav>
+
+</section>
+<div class="collect">
+    <div class="pro">
+            <img src="{% static 'pic1.jpg'%}">
+        </div>
+
+    <h2>Our Projects</h2>
+    <h1>See What We Have Completed Recently</h1>
+    <div class="row">
+        {% for i in pass%}
+        <div class="cover">
+            <img src="{{i.project_image.url}}">
+
+            <h5 >{{i.duration}}</h5>
+            <h5>{{i.status}}</h5>
+            <h5 class="name">{{i.name}}</h5>
+            <p>{{i.descripation}}</p>
+            <button class="swi">Read more</button>
+
+        </div>
+        {% endfor %}
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+
